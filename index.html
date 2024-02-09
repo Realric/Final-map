@@ -130,7 +130,7 @@
           "The information contained in this directory was voluntarily sent to APCA via a survey. Listing in this directory does not represent endorsement or support from APCA or WHO. APCA is not responsible for the accuracy and veracity of the information as it was provided by third parties. This directory is limited to institutions, hospices, and organizations that provide palliative and hospice care. Each listing is marked - in locations where more than one listing is available, a number with the total listings is displayed. You can drag or zoom in the map by using the zooming tool on the left. Clicking on the dot will open a text box with the contact information. If you would like us to add your service please email – info@africanpalliativecare.org ";
         selected2 = "selected";
         var guide_translated =
-          '<p class="legend_title">GUIDE</p><p>"Select the layers icon to activate or deactivate a layer of your choice. Activate the “Service providers” and “Google satellite” if you would like to view a particular service provider and its neighborhood. Activate the “Number of service providers per country” if you wish to view the countries with the highest number of service providers. Click in the drop down to switch to the Heat map.</p>';
+          '<p class="legend_title">GUIDE</p><p>Select the layers icon to activate or deactivate a layer of your choice. Activate the “Service providers” and “Google satellite” if you would like to view a particular service provider and its neighborhood. Activate the “Number of service providers per country” and Google map” if you wish to view the countries with the highest number of service providers. Click in the drop down to switch to another map including the Heat map and the Arabic version.</p>';
         var service_providers_translated = "Service Providers";
         var countries_categorized_translated =
           "Countries categorized according to number of service providers";
@@ -176,7 +176,7 @@
       var map = L.map("map", {
         zoomControl: true,
         maxZoom: 20,
-        minZoom: 4,
+        minZoom: 3,
       }).fitBounds([
         [-5.346031778753542, -20.92395234787535],
         [43.403634839943344, 70.93707425212466],
@@ -200,7 +200,7 @@
           pane: "pane_GoogleSatelliteHybrid_0",
           opacity: 1.0,
           attribution: "",
-          minZoom: 4,
+          minZoom: 3,
           maxZoom: 20,
         }
       );
@@ -732,7 +732,7 @@
         selected2 +
         ' value="English">English</option><option ' +
         selected1 +
-        ' value="Arabic">Arabic</option></select></span>  <span><select id="map_type"><option value="General_Map">General Map</option><option value="Heat_Map">Heat Map</option></select></span>';
+        ' value="Arabic">Arabic</option></select></span>  <span></span>';
       div_lang_or_map_type.className = "lang_or_map_type_dynamic";
       document.getElementById("menu").appendChild(div_lang_or_map_type);
       /**************language section ends****************/
@@ -997,8 +997,6 @@
           var map_type = $(this).children(":selected").val();
           if (map_type == "General_Map") {
             window.location.href = "index.html";
-          } else {
-            window.location.href = "heatmap/index.html";
           }
         });
       });
